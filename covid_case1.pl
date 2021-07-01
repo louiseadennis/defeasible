@@ -1,4 +1,4 @@
-fact(not(covid(missc))).
-fact(face_mask(missc)).
-fact(health_condition(missc)).
-fact(key_worker(missc)).
+fact(health_contraindication(missc)).
+fact(keyworker(missc)).
+fact(not(vaccinated(missc))).
+fact(not(vaccinated(missl))).
