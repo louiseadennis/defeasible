@@ -1,9 +1,9 @@
 defeasible(d1, [dec_hem_lev_low(X)], anemia(X)).
 defeasible(d2, [anemia(X)], stomach_bleeding(X)).
-defeasible(d3, [stomach_bleeding(X), not(do(treat, X))], death(X)).
+defeasible(d3, [stomach_bleeding(X)], death(X)).
 defeasible(d4, [hemorrhoids(X)], anemia(X)).
 
-defeasible(d5, [stomach_bleeding(X)], ought(doctor, do(examine, X))).
+defeasible(d5, [ought(doctor, do(treat, X))], ought(doctor, do(examine, X))).
 defeasible(d6, [death(X)], ought(doctor, do(treat, X))).
 
 defeasible(d7 , [not(right_mind(X))], not(refuse_consent(X, Action))).
