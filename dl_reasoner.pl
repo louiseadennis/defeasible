@@ -52,7 +52,7 @@ provable(defeasible, ought(C, X), [ought(C, X) | [R | Derivation]]):- !,
     \+ (rule(R1, A, ought(C, Xc)), none_not_defeasible(A), precedence(R1, R)),
     complement_dl(ought(C, X), Y),
     not_provable(definite, Y),
-    \+ (rule(R2, A2, Y), none_no_defeasible(A2), precedence(R2, R)).
+    \+ (rule(R2, A2, Y), none_not_defeasible(A2), precedence(R2, R)).
 provable(defeasible, not(ought(C, X)), [not(ought(C, X)) | [R | Derivation]]):- !,
     rule_sd(R, Antecedants, ought(C, X)),
     provable_list(defeasible, Antecedants, Derivation),
@@ -61,7 +61,7 @@ provable(defeasible, not(ought(C, X)), [not(ought(C, X)) | [R | Derivation]]):- 
     \+ (rule(R1, A, not(ought(C, Xc))), none_not_defeasible(A), precedence(R1, R)),
     complement_dl(not(ought(C, X)), Y),
     not_provable(definite, Y),
-    \+ (rule(R2, A2, Y), none_no_defeasible(A2), precedence(R2, R)).
+    \+ (rule(R2, A2, Y), none_not_defeasible(A2), precedence(R2, R)).
 provable(defeasible, X, [X | [R | Derivation]]):-
     rule_sd(R, Antecedants, X),
     provable_list(defeasible, Antecedants, Derivation),
